@@ -1,27 +1,30 @@
-export function backgroundColorChange() {
-    console.assert('worked');
+const observerOptions = {
+    root: null,
+    rootMargin: '0% 0px',
+    threshold: 0.5,
+}
 
-    const sections = document.querySelectorAll('.profile');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0% 0px',
-        threshold: 0.5,
-    };
-    const observer = new IntersectionObserver((entries, observer) => {
-        const element = document.getElementById("app");
+export function backgroundColorChange() {
+
+    const appContainer = document.querySelectorAll('.container');
+    const profile = document.querySelectorAll('.profile');
+    const heroImage = document.querySelectorAll('.hero__image');
+    const hero = document.querySelectorAll('.hero')
+    const observer = new IntersectionObserver((entries) => {
+
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                element.style.background = 'linear-gradient(180deg, rgba(7,7,7,1) 0%, rgba(48,94,252,1) 0%, rgba(208,26,100,1) 100%)'
-                element.style.transition = 'background-color 4s ease-in'
-                element.style.color = '#fff'
-                element.style.transition = 'color 0.6s ease-in'
+                hero[0].classList.toggle('alternate');
+                appContainer[0].classList.toggle('change-body-background')
+                heroImage[0].classList.toggle('visible');
+                heroImage[1].classList.toggle('visible');
+                observer.unobserve(profile[0])
             }
         });
     },
         observerOptions
     );
+    observer.observe(profile[0])
 
-    Array.prototype.forEach.call(sections, (el) => {
-        observer.observe(el);
-    });
-}
+};
+
