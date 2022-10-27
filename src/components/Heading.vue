@@ -44,6 +44,15 @@ export default {
   opacity: 1;
   display: inline-flex;
   align-items: flex-end;
+}.is-animated {
+  opacity: 0;
+  transform: translateY(35%);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.is-animated.scrolled-into-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s, transform 0.7s;
 }
 
 </style>

@@ -6,19 +6,24 @@ const observerOptions = {
 
 export function backgroundColorChange() {
 
+    console.log("working");
     const appContainer = document.querySelectorAll('.container');
-    const profile = document.querySelectorAll('.profile');
     const heroImage = document.querySelectorAll('.hero__image');
     const hero = document.querySelectorAll('.hero')
+    const profile = document.querySelectorAll('.profile');
+
     const observer = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 hero[0].classList.toggle('alternate');
                 appContainer[0].classList.toggle('change-body-background')
+                // show new image 
                 heroImage[0].classList.toggle('visible');
+                heroImage[0].classList.toggle('.is-animated');
+                // hide the new image
                 heroImage[1].classList.toggle('visible');
-                observer.unobserve(profile[0])
+                observer.unobserve(heroImage[1])
             }
         });
     },
