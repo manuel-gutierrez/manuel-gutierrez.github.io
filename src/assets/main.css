@@ -126,3 +126,7 @@ h3 {
   animation: make-it-appear 3s normal;
   color: #fff
 }
+
+.body-color--active a {
+  color: #fff;
+}

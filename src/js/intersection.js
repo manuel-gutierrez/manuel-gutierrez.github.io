@@ -23,7 +23,7 @@ export function backgroundColorChange() {
                 heroImage[0].classList.toggle('spin-off');
                 // hide the new image
                 heroImage[1].classList.toggle('visible');
-                observer.unobserve(profile[0])
+
             }
         });
     },
