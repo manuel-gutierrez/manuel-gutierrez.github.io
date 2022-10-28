@@ -17,13 +17,13 @@ export function backgroundColorChange() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 hero[0].classList.toggle('alternate');
-                appContainer[0].classList.toggle('change-body-background')
+                appContainer[0].classList.toggle('body-color--active')
                 // show new image 
                 heroImage[0].classList.toggle('visible');
-                heroImage[0].classList.toggle('.is-animated');
+                heroImage[0].classList.toggle('spin-off');
                 // hide the new image
                 heroImage[1].classList.toggle('visible');
-                observer.unobserve(heroImage[1])
+                observer.unobserve(profile[0])
             }
         });
     },

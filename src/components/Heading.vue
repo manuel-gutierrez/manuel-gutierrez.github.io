@@ -36,23 +36,32 @@ export default {
   transition: background-color 4.5 ease-in;
 }
 .hero__image {
-  display: none;
-  opacity: 0;
+  display: inline-flex;
+  align-items: flex-end;
+  visibility:hidden;
+  height:0; 
 }
 
 .hero__image.visible {
-  opacity: 1;
-  display: inline-flex;
-  align-items: flex-end;
-}.is-animated {
-  opacity: 0;
-  transform: translateY(35%);
-  transition: opacity 0.7s, transform 0.7s;
-}
-.is-animated.scrolled-into-view {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.7s, transform 0.7s;
+  visibility: visible;
+  height: 100%;
 }
 
+
+
+@keyframes spin {
+0% {
+transform-origin: 0 0;
+transform: translate(-100%,50%) rotate(180deg);
+}
+100% {
+transform-origin: 0 0;
+transform: rotate(360deg);
+}
+}
+
+.spin-off {
+  opacity: 1;
+  animation: spin 1.7s normal;
+}
 </style>

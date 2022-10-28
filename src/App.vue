@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container body-color">
     <Heading/>
     <section id="content">
     <Title/>

@@ -1,4 +1,3 @@
-@import './base.css';
 /* Fonts */
 
 @font-face {
@@ -104,4 +103,26 @@ h3 {
 
 .col-6 {
   max-width: calc(100% / 2);
+}
+
+/* Body Background Color Layes */
+.body-color {
+  background-color: #fff;
+}
+
+@keyframes make-it-appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.body-color--active {
+  background: linear-gradient(180deg, rgba(7, 7, 7, 1) 0%, rgba(48, 94, 252, 1) 0%, rgba(208, 26, 100, 1) 100%);
+  opacity: 1;
+  animation: make-it-appear 3s normal;
+  color: #fff
 }
